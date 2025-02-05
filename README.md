@@ -1,33 +1,32 @@
 # LaTeXToClipboard
 
-This script automates the process of capturing a screenshot, extracting LaTeX-formatted text from it, and copying the result to the clipboard. It offers an open-source alternative to proprietary tools like Mathpix Snip.
+This script automates the process of a [Pix2Text](https://github.com/breezedeus/Pix2Text)-based script. It captures a screenshot, extracts LaTeX-formatted text from it, and copies the result to the clipboard. It offers an open-source alternative to proprietary tools like [Mathpix Snip](https://mathpix.com/snipping-tool). We refer to [Pix2Text](https://github.com/breezedeus/Pix2Text) for further details.
 
 ![Demo](./media/out.gif)
 
-# Prerequesites
-
-**gnome-screenshot** for capturing screenshots. In case of not have it installed:
+# Prerequisites
+**gnome-screenshot** to make a screenshot. In case you have not installed it yet:
   ```bash
   sudo apt-get install gnome-screenshot
   ```
-**xclip** for clipboard management. In case of not have it installed:
+**xclip** for clipboard management. In case you have not installed it yet:
 ```bash
 sudo apt-get install xclip
 ```
-**awk** for extract content using regular exppressions from log files. In case of not have it installed:
+**awk** to extract content using regular exppressions from log files. In case you have not installed it yet:
 ```bash
 sudo apt-get install gawk
 ```
 
 # Setup
 
-Clone this repository and locate it in place confortable to the user. In my case I have it in:
+Clone this repository and locate it in a folder comfortable to the user. In my case I have chosen the following location:
 ```bash
 mkdir $HOME/software
 cd $HOME/software
 git clone https://github.com/pablorubial/LaTeXToClipboard.git
 ```
-Go inside the repo folder and create a python virtual environment inside of it:
+Go to that folder and create there a Python virtual environment:
 ```bash
 cd LaTeXToClipboard
 python3 -m venv .myvenv
@@ -42,26 +41,26 @@ Install the packages from the requirements file:
 pip install -r requirements.txt
 ```
 
-With this setup, we can run the `Run.py` file, that basically takes an image from `"$HOME/software/LaTeXTOClipboard/images/` and after apply the DeepLearning algorithm of pix2text, the output is print into the screen. Now, let us take advantage of this library and automatize the process of:
+With this setup, we can run the `Run.py` file, which takes an image from `"$HOME/software/LaTeXTOClipboard/images/` and after applying a DeepLearning algorithm from pix2text [citar], the output is displayed. Now, let us take advantage of this library and automatize the following process:
 
-1. Take an screenshot of the desired formula that we are interested in get its LaTeX expression.
-2. Send that image to the `images` folder od this repository.
+1. Take a screenshot of the desired formula in order to get its LaTeX expression.
+2. Send that image to the `images` folder of this repository.
 3. Run the `Run.py` file and save the output to a temporal file.
-4. Extract the content between $$ symbols that contains the LaTeX expression.
-5. Copy the expression into the clipboard.
+4. Extract the content between $$ symbols which contains the LaTeX expression.
+5. Copy that expression to clipboard.
 
-All this stuff can be put in a `.sh` inside a folder called `shortcuts` that is inside to the `software` folder automatasing the process. So first generate the mentioned folder:
+All these instructions can be written as a bash script (`.sh` file) inside a folder called `shortcuts` that is inside the `software` folder automating the process. So, let us generate the mentioned folder:
 
 ```bash
 mkdir $HOME/software/shortcuts
 cd $HOME/software/shortcuts
 ```
 
-then create the following `.sh` file called `latex_clipboard.sh`, for example and put the following content inside:
+then create the following `.sh` file called, for example, `latex_clipboard.sh`, and put the following content inside:
 
-```sh
+```bash
 #!/bin/bash
-# Take the screenshot and send it to $HOME/software/LaTeXTOClipboard/images/
+# Take the screenshot and send it to $HOME/software/LaTeXToClipboard/images/
 gnome-screenshot -a -f $HOME/software/LaTeXToClipboard/images/test.jpg
 
 # Process the image using pix2text and save the output in a temporal file
@@ -72,13 +71,12 @@ deactivate
 # Extract all content between $$ and $$ and copy it to the clipboard
 awk '/\$\$/ {flag=!flag; next} flag' /tmp/python_output.log | xclip -selection clipboard
 ```
-
-and give to this file permissions to be executed:
+Now, you have to make that file executable:
 ```bash
 chmod +x $HOME/software/shortcuts/latex_clipboard.sh
 ```
 
-Once the `.sh` file is executable, we can create a linux custom shortcut that basically when it is executed, executes the `.sh` file. In my case I associated the `.sh` file to the 'Ctrl' + 'Alt' + 'p' keyboard combination. This can be done as follows:
+Once the `.sh` file is executable, we can create a linux custom shortcut such that, whenenever it is executed, it runs the `.sh` file. In my case I linked the `.sh` file to the 'Ctrl' + 'Alt' + 'p' keyboard combination. This can be done as follows:
 
 <div style="text-align: center;">
   <img src="./media/shortcut.png" alt="Demo" style="height: 500px;">
