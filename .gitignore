@@ -1,0 +1,34 @@
+# Ignore binary files
+*.o
+*.out
+*.exe
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+*~
+
+# Ignore directories
+tmp/
+build/
+dist/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python virtual environment directories
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore application-specific files
+config.yaml
