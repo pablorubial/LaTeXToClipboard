@@ -80,4 +80,35 @@ chmod +x $HOME/software/shortcuts/latex_clipboard.sh
 
 Once the `.sh` file is executable, we can create a linux custom shortcut that basically when it is executed, executes the `.sh` file. In my case I associated the `.sh` file to the 'Ctrl' + 'Alt' + 'p' keyboard combination. This can be done as follows:
 
-![Demo](./media/shortcut.png)
+<div style="text-align: center;">
+  <img src="./media/shortcut.png" alt="Demo" style="height: 500px;">
+</div>
+
+
+# Usage
+Provide step-by-step instructions on how to use the latex_clipboard.sh script. This will help users understand how to effectively utilize your tool.
+
+Example:
+
+1. Activate the Shortcut:
+
+  * Press the keyboard combination you assigned (e.g., Ctrl + Alt + P) to run the latex_clipboard.sh script.
+
+2. Select the Desired Area:
+
+  * Use the crosshair cursor to select the area of the screen containing the formula you wish to capture.
+3. Paste the LaTeX Code:
+
+  * The extracted LaTeX-formatted text is now copied to your clipboard.
+  * Paste it into your LaTeX editor or document as needed.
+
+# Contribution Guidelines
+
+We welcome contributions of all kinds to enhance this project. To ensure a smooth collaboration, please follow these guidelines:
+
+- **For Minor Changes**: Feel free to submit pull requests (PRs) for minor fixes, such as correcting typos, improving documentation, or small code enhancements.
+
+- **For Major Changes**: If you plan to implement significant features, refactor code, or make changes that could impact existing functionality, please open an issue first. This allows us to discuss your proposal, provide feedback, and ensure alignment with the project's direction before substantial work is undertaken.
+
+# Contact
+Please, contact the project administrators,  [Pablo Rubial](pablorubialyanez@gmail.com),  [Davide Trevisani](davide.trevisani@udc.es), and [Oliver Rúas](ruas.barrosa.oliver@gmail.com) for further questions about licenses and terms of use.
