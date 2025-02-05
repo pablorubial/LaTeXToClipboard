@@ -41,7 +41,7 @@ Install the packages from the requirements file:
 pip install -r requirements.txt
 ```
 
-With this setup, we can run the `Run.py` file, which takes an image from `"$HOME/software/LaTeXTOClipboard/images/` and after applying a DeepLearning algorithm from pix2text [citar], the output is displayed. Now, let us take advantage of this library and automatize the following process:
+With this setup, we can run the `Run.py` file, which takes an image from `$HOME/software/LaTeXTOClipboard/images/` and after applying a DeepLearning algorithm from [Pix2Text](https://github.com/breezedeus/Pix2Text), the output is displayed. Now, let us take advantage of this library and automatize the following process:
 
 1. Take a screenshot of the desired formula in order to get its LaTeX expression.
 2. Send that image to the `images` folder of this repository.
@@ -109,4 +109,4 @@ We welcome contributions of all kinds to enhance this project. To ensure a smoot
 - **For Major Changes**: If you plan to implement significant features, refactor code, or make changes that could impact existing functionality, please open an issue first. This allows us to discuss your proposal, provide feedback, and ensure alignment with the project's direction before substantial work is undertaken.
 
 # Contact
-Please, contact the project administrators,  [Pablo Rubial](pablorubialyanez@gmail.com),  [Davide Trevisani](davide.trevisani@udc.es), and [Oliver Rúas](ruas.barrosa.oliver@gmail.com) for further questions about licenses and terms of use.
+Please, contact the project administrators,  [Pablo Rubial](mailto:pablorubialyanez@gmail.com),  [Davide Trevisani](mailto:davide.trevisani@udc.es), and [Oliver Rúas](mailto:ruas.barrosa.oliver@gmail.com) for further questions about licenses and terms of use.
